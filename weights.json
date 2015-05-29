@@ -1,0 +1,19 @@
+{
+    "identifier": "id",
+    "items": [
+        {id: "weight_0", label: "149", moveTo: "#", rightText: "2012-10-01", 
+		notes: "Starting to track my weight."},
+
+        {id: "weight_1", label: "150", moveTo: "#", rightText: "2012-10-09", 
+		notes: "Ran 5 miles and ate lots of broccoli!"},
+
+        {id: "weight_2", label: "151", moveTo: "#", rightText: "2012-10-15", 
+		notes: "Oops, going in wrong direction."},
+
+        {id: "weight_3", label: "148", moveTo: "#", rightText: "2012-10-23", 
+		notes: "Wow, lost 3 pounds!"},
+
+        {id: "weight_4", label: "146", moveTo: "#", rightText: "2012-11-01", 
+			notes: "Feeling good!"}
+    ]
+}

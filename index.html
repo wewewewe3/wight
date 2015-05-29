@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+ <meta charset="utf-8"/>
+ <title>Untitled</title>
+ <script type="text/javascript" src="lib/dojo/dojo/dojo.js" data-dojo-config="'parseOnLoad':true,'async':true,'packages':[{'name':'gridx','location':'../gridx'},{'name':'clipart','location':'../../clipart'},{'name':'maqettaSamples','location':'../../../samples'},{'name':'maqetta','location':'../../maqetta'},{'name':'shapes','location':'../../shapes'},{'name':'zazl','location':'../../zazl'},{'name':'widgets','location':'../../custom'}]"></script>
+ <script type="text/javascript">
+	require([
+	"dijit/dijit",
+	"dojo/parser",
+	"maqetta/space",
+	"maqetta/AppStates",
+	"dojox/mobile",
+	"dojox/mobile/deviceTheme",
+	"dojox/mobile/compat",
+	"dojo/hash",
+	"dojox/mobile/ScrollableView",
+	"dojox/io/xhrScriptPlugin",
+	"dojo/data/ItemFileReadStore",
+	"dojox/mobile/EdgeToEdgeDataList",
+	"dojox/mobile/SpinWheel",
+	"dojox/mobile/SpinWheelDatePicker",
+	"dojox/mobile/TextArea"
+	]);
+	</script>
+ <style>@import "themes/claro/claro.css";@import "app.css";
+ </style>
+ <script type="text/javascript" src="app.js"></script>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"></meta>
+ </head>
+ <body class="claro" data-maq-device="iphone" data-maq-flow-layout="true" data-maq-ws="collapse" id="myapp" data-maq-appstates="{}" data-maq-comptype="mobile">
+ <div data-dojo-type="dojox.mobile.ScrollableView" id="mainView" keepScrollPos="false" scrollBar="true" selected="selected">
+ <h1 label="Weight Tracker" data-dojo-type="dojox.mobile.Heading" fixed="top">
+ <div label="+" data-dojo-type="dojox.mobile.ToolBarButton" id="addWeightButton" moveTo="detailsView" style="float: right;"></div>
+ </h1>
+ <span data-dojo-type="dojo.data.ItemFileReadStore" id="ItemFileReadStore_1" jsId="ItemFileReadStore_1" url="weights.json"></span>
+ <ul data-dojo-type="dojox.mobile.EdgeToEdgeDataList" id="weightList" store="ItemFileReadStore_1" query="{&quot;label&quot;:&quot;*&quot;}"></ul>
+ </div>
+ <div data-dojo-type="dojox.mobile.ScrollableView" id="detailsView" keepScrollPos="false" scrollBar="true">
+ <h1 label="Details" data-dojo-type="dojox.mobile.Heading" back="Home" moveTo="mainView" fixed="top"></h1>
+ <div label="Weights (lbs)" data-dojo-type="dojox.mobile.RoundRectCategory"></div>
+ <div data-dojo-type="dojox.mobile.RoundRect">
+ <div data-dojo-type="dojox.mobile.SpinWheel" id="weightSpinWheel" style="width: 222px; margin-right: auto; margin-left: auto;">
+ <div data-dojo-type="dojox.mobile.SpinWheelSlot" labels="0,1,2,3,4,5,6,7,8,9" labelFrom="0" labelTo="0" value="1" style="width: 70px;"></div>
+ <div data-dojo-type="dojox.mobile.SpinWheelSlot" labels="0,1,2,3,4,5,6,7,8,9" labelFrom="0" labelTo="0" value="5" style="width: 70px;"></div>
+ <div data-dojo-type="dojox.mobile.SpinWheelSlot" labels="0,1,2,3,4,5,6,7,8,9" labelFrom="0" labelTo="0" value="0" style="width: 70px;"></div>
+ </div>
+ </div>
+ <ul data-dojo-type="dojox.mobile.RoundRectList">
+ <li data-dojo-type="dojox.mobile.ListItem" id="dateListItem" moveTo="detailsView_Date" rightText="2012-10-09" rightIcon="mblDomButtonArrow">
+	Date</li>
+ <li data-dojo-type="dojox.mobile.ListItem" id="notesListItem" moveTo="detailsView_Notes" rightText="Ran 5 mi..." rightIcon="mblDomButtonArrow">
+	Notes</li>
+ </ul>
+ </div>
+ <div data-dojo-type="dojox.mobile.ScrollableView" id="detailsView_Date" keepScrollPos="false" scrollBar="true">
+ <h1 label="Date" data-dojo-type="dojox.mobile.Heading" back="Details" moveTo="detailsView" fixed="top"></h1>
+ <div data-dojo-type="dojox.mobile.SpinWheelDatePicker" id="dateSpinWheel" style="margin-top: 10px;"></div>
+ </div>
+ <div data-dojo-type="dojox.mobile.ScrollableView" id="detailsView_Notes" keepScrollPos="false" scrollBar="true">
+ <h1 label="Notes" data-dojo-type="dojox.mobile.Heading" back="Details" moveTo="detailsView" fixed="top"></h1>
+ <div data-dojo-type="dojox.mobile.RoundRect">
+ <textarea data-dojo-type="dojox.mobile.TextArea" id="notesTextArea" value="Ran 5 miles and ate lots of broccoli!" style="width: 100%; height: 150px;"></textarea>
+ </div>
+ </div>
+ </body>
+ </html>
+	
+
